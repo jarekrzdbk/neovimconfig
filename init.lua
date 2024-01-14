@@ -12,7 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
-
+vim.cmd('syntax enable')
+vim.cmd('filetype plugin indent on')
 require("vim-options")
 require("lazy").setup("plugins", opts)
 
