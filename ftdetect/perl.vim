@@ -1,5 +1,5 @@
 function! DetectPerlFile()
-    if getline(1) =~# '^#!.*sh'
+    if getline(1) =~# '^##!.*sh'
         if getline(2) =~# '^#!.*perl'
             setfiletype perl
             return
