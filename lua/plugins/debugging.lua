@@ -33,11 +33,6 @@ return {
             command = 'bash',
             args = {'/home/jaro/.local/bin/start_language_server.sh'}
         }
-        --dap.adapters.perl = {
-        --  type = 'executable',
-        --  command = 'node',
-        --  args = {'/home/jaro/.vscode/extensions/richterger.perl-2.6.2/out/dbgforward.js'}
-        --}
         dap.configurations.perl = {
             {
                 type = 'perl',
@@ -50,26 +45,6 @@ return {
                 args = {'--max-polymer-atoms=200', '--max-polymer-span=1', '/home/jaro/projects/cif/9/00/89/9008997.cif'}
             }
         }
-        --dap.adapters.perl = {
-        --    type = 'executable',
-        --    command = vim.env.MASON .. '/bin/perl-debug-adapter',
-        --    args = {},
-        --}
-
-        --dap.configurations.perl = {
-        --    {
-        --        type = 'perl',
-        --        request = 'launch',
-        --        showLog = true,
-        --        name = 'Launch Perl',
-        --        reloadModules = true,
-        --        program = '${workspaceFolder}/${relativeFile}',
-        --        env = {
-        --            PERL5LIB = vim.fn.getcwd() .. '/src/lib/perl5:' .. (os.getenv('PERL5LIB') or '')
-        --        },
-        --        args = '/home/jaro/projects/cif/9/00/89/9008997.cif'
-        --    }
-        --}
         dap.set_log_level 'DEBUG'
     end
 }
