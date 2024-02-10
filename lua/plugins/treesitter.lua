@@ -4,7 +4,7 @@ return {
     config = function()
         local config = require("nvim-treesitter.configs")
         config.setup({
-            ensure_installed = {"lua", "javascript", "c", "ada"},
+            ensure_installed = {"lua", "javascript", "c", "ada", "perl"},
             highlight = {
                 enable = true,
                 --disable = { 'latex' },
