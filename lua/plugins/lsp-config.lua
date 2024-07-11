@@ -31,6 +31,13 @@ return {
                     "rustup", "run", "stable", "rust-analyzer"
                 }
             })
+            lspconfig.ltex.setup({
+                settings = {
+                    ltex = {
+                        language = "en-GB"
+                    }
+                }
+            })
             vim.keymap.set('n', 'K', vim.lsp.buf.hover,{})
             vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
