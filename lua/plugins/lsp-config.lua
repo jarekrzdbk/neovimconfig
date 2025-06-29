@@ -18,11 +18,17 @@ return {
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             local lspconfig = require("lspconfig")
+
             lspconfig.lua_ls.setup({
                 capabilities = capabilities
             })
+
             lspconfig.perlpls.setup({
-                capabilities = capabilities
+                cmd = { '/home/jaro/perl5/bin/pls' },
+                settings = {
+                    inc = { '/home/jaro/installations/lib', 'home/jaro/perl5/lib' }
+                },
+                capabilities = capabilities,
             })
             lspconfig.rust_analyzer.setup({
                 capabilities = capabilities,

@@ -56,6 +56,13 @@ function M.on_very_lazy(fn)
   })
 end
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "ada",
+    callback = function()
+        vim.api.nvim_buf_del_keymap(0, "i", "<Space>aj")
+        vim.api.nvim_buf_del_keymap(0, "i", "<Space>al")
+    end,
+})
 ---@param name string
 function M.opts(name)
   local plugin = require("lazy.core.config").plugins[name]

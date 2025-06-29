@@ -2,6 +2,7 @@ return {
     "mfussenegger/nvim-dap",
     dependencies = {
         "rcarriga/nvim-dap-ui",
+        "nvim-neotest/nvim-nio",
         "theHamsta/nvim-dap-virtual-text"
     },
     config = function ()
@@ -42,13 +43,26 @@ return {
                 program = "${file}",
                 stopOnEntry = true,
                 reloadModules = true,
-                args = {'--max-polymer-atoms=200', '--max-polymer-span=2', '/home/jaro/projects/cif/9/00/89/9008997.cif'}
+                --args = {'--no-audit', '--format="%6.4f"', './tests/cases/cif_molecule_001.inp'}
+                --args = {'--no-audit', '-1', 'tests/cases/cif_molecule_030.inp'}
+                --args = { '-1', '--preserve-stoichiometry', '--max-polymer-span=1', '--max-polymer-atoms=200', 'tests/cases/cif_molecule_049.inp'}
+                --args = { '-1', '--ignore-bumps', '--preserve-stoichiometry', '--max-polymer-span=1', '--max-polymer-atoms=200', 'tests/cases/cif_molecule_135.inp'}
+                --args = { '--ignore-bumps', '--no-audit', '--max-polymer-span=1', 'tests/cases/cif_molecule_216.inp'}
+                --args = { '--ignore-bumps', 'tests/cases/cif_molecule_512.inp'}
+                --args = { '--preserve-stoichiometry', '--ignore-bumps', '--max-polymer-span=0', 'tests/cases/cif_molecule_508.inp'}
+                
+                --args = {'/home/jaro/projects/cod/cif/1/51/64/1516491.cif'}
+               
                 --args = {'test_stoichiometry.cif'}
+                --args = {'cif_molecule_012_test.cif'}
                 --args = {'check_stoichiometry_multiple.cif'}
                 --args = {'/home/jaro/projects/cif/1/00/00/1000063.cif'}
                 --args = {'testcase10.cif'}
                 --args = {'--max-polymer-atoms=200', '--max-polymer-span=1', '-i', '--p1', '--merge-disorder-groups', '/home/jaro/projects/cif/1/52/23/1522303.cif'}
+                --args = {'--max-polymer-atoms=200', '--max-polymer-span=1', '-i', '--p1', '--merge-disorder-groups', '/home/jaro/projects/cif/1/52/23/1522303.cif'}
+                --args = {'-i', '--p1', '--merge-disorder-groups', '/home/jaro/projects/cod/cif/2/00/01/2000129.cif'}
                 --args = {'testpolymer.cif'}
+                args = {'1000358.cif'}
                 --args = { 'tests/cases/cif_polymer_multiplicity_012.inp'}
                 --args = {'test89.cif'}
 				--args = { '--multiplicity-file outputs/polymers/default/7/20/71/7207129_multiplicity.txt', 'outputs/polymers/default/7/20/71/7207129.cif'}
@@ -66,6 +80,7 @@ return {
                 --args = {'--max-polymer-atoms=200', '--max-polymer-span=1', '-i', '--p1', '--merge-disorder-groups', '/home/jaro/projects/cif/9/00/88/9008834.cif'}
             }
         }
+
         dap.set_log_level 'DEBUG'
     end
 }
